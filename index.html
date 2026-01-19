@@ -135,17 +135,18 @@
       margin:0 0 14px;
     }
 
-    /* --- HERO LAYOUT (improved organization) --- */
+    /* --- HERO LAYOUT (aligned with lead line) --- */
     .heroLead{font-size:16px}
 
     .heroGrid{
       display:grid;
-      grid-template-columns: 1.7fr 1fr;
+      grid-template-columns: 1.75fr 1fr;
       gap:18px;
-      margin-top:10px;
+      margin-top:6px;
       align-items:start;
     }
 
+    .heroCopy{min-width:0;}
     .heroCopy .sub{margin:0 0 12px;}
     .heroCopy .sub:last-child{margin:0;}
 
@@ -153,6 +154,7 @@
       width:100%;
       display:grid;
       gap:10px;
+      align-self:start;
     }
 
     .stat{
@@ -204,10 +206,11 @@
 
     .btnPrimary:hover{filter:brightness(1.05)}
 
-    /* Attractive CTA bar */
+    /* --- CTA BAR (clean grid layout) --- */
     .ctaBar{
       margin-top:14px;
-      display:flex;
+      display:grid;
+      grid-template-columns: 340px 1fr;
       gap:14px;
       align-items:center;
       padding:14px;
@@ -225,21 +228,22 @@
       border-radius:18px;
       background:linear-gradient(135deg, rgba(122,167,255,.55), rgba(125,255,201,.35));
       filter: blur(12px);
-      opacity:.35;
+      opacity:.32;
       z-index:-1;
     }
 
     .btnBig{
+      width:100%;
       padding:14px 18px;
       border-radius:16px;
       box-shadow: 0 16px 34px rgba(122,167,255,.25);
     }
 
     .ctaMeta{
-      display:flex;
-      flex-direction:column;
+      display:grid;
+      grid-template-rows:auto auto auto;
       gap:6px;
-      min-width:240px;
+      min-width:0;
     }
 
     .ctaMetaTitle{
@@ -272,10 +276,10 @@
       border-radius:999px;
     }
 
-    @media (max-width:720px){
-      .ctaBar{flex-direction:column; align-items:stretch}
-      .btnBig{width:100%}
-      .ctaMeta{min-width:unset}
+    @media (max-width:860px){
+      .ctaBar{
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Referral image */
@@ -387,14 +391,14 @@
     <section class="card">
       <h1>Star Citizen</h1>
 
-      <p class="sub heroLead">
-        Star Citizen is a living sci-fi universe where you fly ships, run missions, trade, mine, salvage,
-        and explore—solo or with a crew. Every session can turn into a rescue, a dogfight, a heist,
-        or an “oops” that becomes a story.
-      </p>
-
       <div class="heroGrid">
         <div class="heroCopy">
+          <p class="sub heroLead">
+            Star Citizen is a living sci-fi universe where you fly ships, run missions, trade, mine, salvage,
+            and explore—solo or with a crew. Every session can turn into a rescue, a dogfight, a heist,
+            or an “oops” that becomes a story.
+          </p>
+
           <p class="sub">
             <strong>Current state (Alpha 4.5):</strong> Dawn of Engineering deepens ship systems and sets the foundation
             for hands-on engineering gameplay—power, components, damage control, and crew coordination.
@@ -423,7 +427,7 @@
         </aside>
       </div>
 
-      <!-- Attractive CTA bar -->
+      <!-- CTA bar -->
       <div class="ctaBar">
         <a class="btn btnPrimary btnBig"
            href="https://www.robertsspaceindustries.com/enlist?referral=STAR-7SVF-G75G"
