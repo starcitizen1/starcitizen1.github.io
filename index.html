@@ -135,23 +135,22 @@
       margin:0 0 14px;
     }
 
-    /* Hero detail block */
+    /* --- HERO LAYOUT (improved organization) --- */
     .heroLead{font-size:16px}
 
-    .heroDetails{
-      display:flex;
-      gap:16px;
-      margin-top:8px;
-      align-items:flex-start;
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.7fr 1fr;
+      gap:18px;
+      margin-top:10px;
+      align-items:start;
     }
 
-    .heroDetailsText{
-      flex:1;
-      min-width:280px;
-    }
+    .heroCopy .sub{margin:0 0 12px;}
+    .heroCopy .sub:last-child{margin:0;}
 
     .heroStats{
-      width:300px;
+      width:100%;
       display:grid;
       gap:10px;
     }
@@ -160,7 +159,7 @@
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
       border-radius:16px;
-      padding:10px 12px;
+      padding:12px 12px;
     }
 
     .statLabel{
@@ -178,8 +177,7 @@
     }
 
     @media (max-width:960px){
-      .heroDetails{flex-direction:column}
-      .heroStats{width:100%}
+      .heroGrid{grid-template-columns:1fr}
     }
 
     /* Buttons */
@@ -337,15 +335,6 @@
     }
     .tile:hover::before{transform:scale(1.08)}
     .tileInner{position:relative;padding:14px}
-    .tileTag{
-      font-family:"Orbitron",system-ui,sans-serif;
-      font-size:12px;
-      padding:6px 9px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(0,0,0,.25);
-      display:inline-block;
-    }
     .tile p{color:var(--muted);font-size:14px;margin:0}
 
     /* Bottom CTA bubble */
@@ -404,21 +393,21 @@
         or an “oops” that becomes a story.
       </p>
 
-      <div class="heroDetails">
-        <div class="heroDetailsText">
-          <p class="sub" style="margin-bottom:10px;">
+      <div class="heroGrid">
+        <div class="heroCopy">
+          <p class="sub">
             <strong>Current state (Alpha 4.5):</strong> Dawn of Engineering deepens ship systems and sets the foundation
             for hands-on engineering gameplay—power, components, damage control, and crew coordination.
           </p>
 
-          <p class="sub" style="margin:0;">
+          <p class="sub">
             Your gameplay loop can be peaceful or chaotic: haul cargo for profit, mine for resources, salvage wrecks,
             run support rescues, or chase high-risk PvP. The best part is how these loops collide—your “simple delivery”
             can become someone else’s bounty, rescue, or ambush.
           </p>
         </div>
 
-        <div class="heroStats">
+        <aside class="heroStats">
           <div class="stat">
             <div class="statLabel">Playstyles</div>
             <div class="statValue">Solo • Crew • Org</div>
@@ -431,7 +420,7 @@
             <div class="statLabel">High stakes</div>
             <div class="statValue">PvP • Law • Reputation</div>
           </div>
-        </div>
+        </aside>
       </div>
 
       <!-- Attractive CTA bar -->
@@ -466,7 +455,6 @@
     </div>
 
     <p class="sub">
-    
       Star Citizen is built around interconnected gameplay loops that let players choose
       how they live in the ’verse. Whether you prefer calculated risk or chaotic encounters,
       each loop supports long-term progression, reputation, and emergent storytelling.
@@ -486,11 +474,10 @@
       into recovery missions instead of hard stops.
     </p>
 
-    <!-- Gameplay tiles -->
+    <!-- Gameplay tiles (small bubble tags removed) -->
     <section class="tiles">
       <article class="tile" style="--img:url('assets/cargo.jpg')">
         <div class="tileInner">
-          <span class="tileTag">Cargo</span>
           <h3>Hauling & Trading</h3>
           <p>Move goods, manage risk, build capital.</p>
         </div>
@@ -498,7 +485,6 @@
 
       <article class="tile" style="--img:url('assets/mining.jpg')">
         <div class="tileInner">
-          <span class="tileTag">Mining</span>
           <h3>Mining</h3>
           <p>Scan, extract, refine, repeat.</p>
         </div>
@@ -506,7 +492,6 @@
 
       <article class="tile" style="--img:url('assets/salvage.jpg')">
         <div class="tileInner">
-          <span class="tileTag">Salvage</span>
           <h3>Salvage</h3>
           <p>Strip wrecks and reclaim value.</p>
         </div>
@@ -514,7 +499,6 @@
 
       <article class="tile" style="--img:url('assets/rescue.jpg')">
         <div class="tileInner">
-          <span class="tileTag">Rescue</span>
           <h3>Rescue & Support</h3>
           <p>Medical, transport, recovery.</p>
         </div>
@@ -522,7 +506,6 @@
 
       <article class="tile" style="--img:url('assets/piracy.jpg')">
         <div class="tileInner">
-          <span class="tileTag">Risk</span>
           <h3>PvP & High Stakes</h3>
           <p>Danger, law, consequences.</p>
         </div>
@@ -530,7 +513,6 @@
 
       <article class="tile" style="--img:url('assets/explore.jpg')">
         <div class="tileInner">
-          <span class="tileTag">Explore</span>
           <h3>Exploration</h3>
           <p>Discover places and stories.</p>
         </div>
