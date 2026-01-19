@@ -4,12 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Star Citizen</title>
-  <meta name="description" content="Star Citizen is a living sci-fi universe where you fly ships, take missions, trade, mine, salvage, and explore with friends. Join the 'verse and start with a referral bonus." />
+
+  <meta name="description" content="Star Citizen is a living sci-fi universe where you fly ships, run missions, trade, mine, salvage, and explore—solo or with a crew." />
   <meta name="theme-color" content="#070a14" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Star Citizen" />
-  <meta property="og:description" content="A living sci-fi universe: fly ships, run missions, trade, mine, salvage, and explore. Alpha 4.5 brings major updates—jump in and start with a referral bonus." />
+  <meta property="og:description" content="A living sci-fi universe. Fly ships, run missions, trade, mine, salvage, and explore the ’verse." />
   <meta property="og:type" content="website" />
 
   <!-- Fonts -->
@@ -19,6 +20,7 @@
 
   <style>
     :root{
+      --bg: linear-gradient(180deg, #070a14 0%, #0b1230 55%, #0a2a2a 100%);
       --card: rgba(255,255,255,.06);
       --card2: rgba(255,255,255,.08);
       --line: rgba(255,255,255,.12);
@@ -33,210 +35,143 @@
     *{box-sizing:border-box}
     html,body{height:100%}
 
-    /* ONE solid background */
     body{
       margin:0;
+      background: var(--bg);
       color:var(--text);
-      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
       line-height:1.6;
       overflow-x:hidden;
-      background: linear-gradient(
-        180deg,
-        #070a14 0%,
-        #0b1230 50%,
-        #0a2a2a 100%
-      );
     }
 
-    a{color:inherit}
+    a{color:inherit;text-decoration:none}
     .wrap{max-width:1120px;margin:0 auto;padding:22px}
 
+    /* Header */
     .nav{
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      padding:10px 0 16px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:10px 0 18px;
     }
+    .brandRow{display:flex;align-items:center;gap:14px}
     .brand{
-      display:flex;align-items:center;gap:10px;
-      text-decoration:none;font-weight:900;letter-spacing:.2px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      letter-spacing:.2px;
     }
     .mark{
       width:14px;height:14px;border-radius:50%;
-      background: linear-gradient(135deg,var(--accent),var(--accent2));
-      box-shadow: 0 0 0 7px rgba(122,167,255,.13);
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 0 0 7px rgba(122,167,255,.13);
     }
 
-    .links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .links{display:flex;gap:10px}
     .pill{
-      padding:9px 12px;border-radius:999px;
+      padding:9px 14px;
+      border-radius:999px;
       border:1px solid var(--line);
-      text-decoration:none;
+      background:rgba(255,255,255,.03);
       color:var(--muted);
-      font-weight:700;font-size:14px;
-      background: rgba(255,255,255,.03);
+      font-weight:700;
+      font-size:14px;
     }
-    .pill:hover{color:var(--text);border-color:rgba(255,255,255,.24)}
+    .pill:hover{color:var(--text);border-color:rgba(255,255,255,.25)}
 
+    /* Cards */
     .card{
       border:1px solid var(--line);
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
       padding:18px;
-      overflow:hidden;
     }
 
-    /* Fonts / style */
-    h1, h2, h3{
-      font-family: "Orbitron", system-ui, sans-serif;
-      letter-spacing: .04em;
+    /* Typography */
+    h1,h2,h3{
+      font-family:"Orbitron",system-ui,sans-serif;
+      letter-spacing:.05em;
+      text-transform:uppercase;
     }
-
     h1{
-      margin:0 0 10px 0;
+      margin:0 0 10px;
       font-size:44px;
       line-height:1.05;
-      text-transform: uppercase;
       text-shadow:
         0 0 12px rgba(122,167,255,.25),
         0 0 28px rgba(125,255,201,.12);
     }
-    @media (max-width:520px){
-      h1{ font-size:34px; }
-    }
+    @media (max-width:520px){h1{font-size:34px}}
 
-    h2{
-      margin:0;
-      font-size:22px;
-      letter-spacing:.06em;
-      text-transform: uppercase;
-    }
-
-    h3{
-      margin:10px 0 6px 0;
-      font-size:18px;
-      letter-spacing:.05em;
-    }
+    h2{font-size:22px;margin:0}
+    h3{font-size:18px;margin:10px 0 6px}
 
     .sub{
-      margin:0 0 14px 0;
       color:var(--muted);
       font-size:16px;
-      font-weight:500;
+      margin:0 0 14px;
     }
 
-    .hero{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:16px;
-      align-items:stretch;
-    }
-
-    .heroMain{padding:0}
-    .heroBody{padding:18px}
-
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 16px 0}
-    .badge{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.04);
-      font-weight:900;font-size:13px;
-    }
-    .badge strong{color:var(--text)}
-    .badge.glow{
-      border-color: rgba(122,167,255,.28);
-      background: rgba(122,167,255,.12);
-    }
-
-    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-
+    /* Buttons */
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
       border-radius:14px;
-      padding:12px 14px;
-      text-decoration:none;
-      font-weight:950;
-      border:1px solid transparent;
-      cursor:pointer;
-      user-select:none;
-      font-family: "Orbitron", system-ui, sans-serif;
+      font-family:"Orbitron",system-ui,sans-serif;
       letter-spacing:.08em;
-      text-transform: uppercase;
+      text-transform:uppercase;
+      font-weight:900;
+      cursor:pointer;
+      border:1px solid transparent;
     }
     .btnPrimary{
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
       color:#061027;
-      background: linear-gradient(135deg,var(--accent),var(--accent2));
-      box-shadow: 0 14px 30px rgba(122,167,255,.22);
+      box-shadow:0 14px 30px rgba(122,167,255,.22);
     }
     .btnPrimary:hover{filter:brightness(1.05)}
-    .btnGhost{
-      color:var(--text);
-      background: rgba(255,255,255,.05);
-      border-color: var(--line);
-    }
-    .btnGhost:hover{border-color:rgba(255,255,255,.26)}
 
-    .refBox{
-      margin-top:14px;
-      padding:12px;
-      border-radius:16px;
-      border:1px dashed rgba(255,255,255,.26);
-      background: rgba(0,0,0,.18);
-      display:flex;align-items:center;justify-content:space-between;gap:10px;
-      word-break:break-word;
-    }
-    .refBox code{font-weight:950;color:var(--text)}
-    .copyBtn{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-      border-radius:12px;
-      padding:9px 10px;
-      font-weight:950;
-      cursor:pointer;
-      flex:0 0 auto;
-    }
-    .copyBtn:hover{border-color:rgba(255,255,255,.26)}
-
-    .fine{color:var(--muted);font-size:12px;margin-top:10px}
-
-    /* Referral picture (join.jpg) */
+    /* Referral image */
     .joinImage{
-      margin-top: 18px;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.14);
-      box-shadow: 0 18px 50px rgba(0,0,0,.6);
+      margin-top:18px;
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 18px 50px rgba(0,0,0,.6);
     }
-    .joinImage img{
-      width:100%;
-      display:block;
-      object-fit: cover;
-    }
+    .joinImage img{width:100%;display:block}
 
+    /* Gameplay tiles */
     .sectionTitle{
-      margin:22px 0 10px 0;
-      display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+      margin:26px 0 10px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
     }
     .sectionTitle span{color:var(--muted);font-size:13px}
 
-    /* Gameplay loop tiles */
     .tiles{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:14px;
     }
-    @media (max-width: 960px){ .tiles{grid-template-columns: 1fr} }
+    @media (max-width:960px){.tiles{grid-template-columns:1fr}}
 
     .tile{
       position:relative;
+      min-height:210px;
       border-radius:20px;
-      border:1px solid var(--line);
-      background: var(--card2);
       overflow:hidden;
-      box-shadow: 0 12px 35px rgba(0,0,0,.45);
-      min-height: 210px;
+      border:1px solid var(--line);
+      background:var(--card2);
+      box-shadow:0 12px 35px rgba(0,0,0,.45);
       display:flex;
       align-items:flex-end;
     }
@@ -244,199 +179,152 @@
       content:"";
       position:absolute;inset:0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.78)),
+        linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.78)),
         var(--img) center/cover no-repeat;
-      transform: scale(1.02);
-      transition: transform .35s ease;
-      will-change: transform;
+      transition:transform .35s ease;
     }
-    .tile:hover::before{transform: scale(1.08)}
-    .tileInner{
-      position:relative;
-      padding:14px;
-      width:100%;
-    }
+    .tile:hover::before{transform:scale(1.08)}
+    .tileInner{position:relative;padding:14px}
     .tileTag{
-      display:inline-flex;
+      font-family:"Orbitron",system-ui,sans-serif;
+      font-size:12px;
       padding:6px 9px;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.18);
-      background: rgba(0,0,0,.25);
-      font-weight:950;
-      font-size:12px;
-      letter-spacing:.2px;
-      font-family: "Orbitron", system-ui, sans-serif;
-      text-transform: uppercase;
+      background:rgba(0,0,0,.25);
     }
-    .tile p{margin:0;color:var(--muted);font-size:14px}
+    .tile p{color:var(--muted);font-size:14px;margin:0}
 
-    /* Final CTA */
-    .finalCTA{
-      margin-top:18px;
-      padding:18px;
-      border-radius: 26px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      box-shadow: var(--shadow);
-      text-align:center;
-    }
-    .finalCTA h2{margin:0 0 6px 0;font-size:26px}
-    .finalCTA p{margin:0 0 12px 0;color:var(--muted)}
+    /* Footer */
     footer{
+      margin:22px 0 6px;
       text-align:center;
       color:var(--muted);
       font-size:12px;
-      margin:18px 0 6px 0;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="nav">
-      <a class="brand" href="#top">
-        <span class="mark" aria-hidden="true"></span>
+<div class="wrap">
+
+  <!-- Header -->
+  <div class="nav">
+    <div class="brandRow">
+      <div class="brand">
+        <span class="mark"></span>
         <span>Star Citizen</span>
+      </div>
+
+      <a class="pill"
+         href="https://www.sc-advisory.space"
+         target="_blank"
+         rel="noopener">
+        Public Advisory
       </a>
-      <div class="links">
-        <a class="pill" href="#loops">Gameplay Loops</a>
-      </div>
     </div>
 
-    <section id="top" class="hero">
-      <div class="card heroMain">
-        <div class="heroBody">
-          <h1>Star Citizen</h1>
-
-          <p class="sub">
-            A living sci-fi universe where you fly ships, run missions, trade, mine, salvage, and explore—solo or with a crew.
-            Every session can turn into a heist, a rescue, a dogfight, or an “oops” that becomes a story.
-          </p>
-
-          <p class="sub" style="margin-top:-6px;">
-            <strong>What’s going on in the ’verse (Alpha 4.5):</strong>
-            “Dawn of Engineering” brings a major focus on ship engineering and gameplay updates, plus a long list of quality-of-life and systems changes in the LIVE patch notes. :contentReference[oaicite:1]{index=1}
-          </p>
-
-          <div class="badges">
-            <span class="badge glow">✅ <strong>50,000 UEC</strong> referral bonus</span>
-            <span class="badge">✅ Fast enlist</span>
-            <span class="badge">✅ One clear button</span>
-          </div>
-
-          <div class="ctaRow">
-            <a class="btn btnPrimary"
-               href="https://www.robertsspaceindustries.com/enlist?referral=STAR-7SVF-G75G"
-               target="_blank" rel="noopener">
-              Enlist with my referral →
-            </a>
-            <a class="btn btnGhost" href="#loops">See loops</a>
-          </div>
-
-          <div class="refBox" aria-label="Referral code box">
-            <div>
-              Referral code: <code id="refCode">STAR-7SVF-G75G</code>
-              <div class="fine">The link auto-applies it. Copy is optional.</div>
-            </div>
-            <button class="copyBtn" id="copyBtn" type="button">Copy</button>
-          </div>
-
-          <!-- Referral picture (join.jpg) -->
-          <div class="joinImage">
-            <img src="assets/join.jpg" alt="Join Star Citizen referral bonus">
-          </div>
-
-          <div class="fine">
-            Fan-made landing page. Not affiliated with or endorsed by Cloud Imperium Games / RSI.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="sectionTitle" id="loops">
-      <h2>Gameplay Loops</h2>
-      <span>Pick a vibe. Click. Fly.</span>
-    </div>
-
-    <section class="tiles">
-      <article class="tile" style="--img:url('assets/cargo.jpg')">
-        <div class="tileInner">
-          <span class="tileTag">Cargo</span>
-          <h3>Hauling & Trading</h3>
-          <p>Run routes, manage risk, and turn time into credits.</p>
-        </div>
-      </article>
-
-      <article class="tile" style="--img:url('assets/mining.jpg')">
-        <div class="tileInner">
-          <span class="tileTag">Mining</span>
-          <h3>Mining</h3>
-          <p>Scan, extract, refine, and learn what “one more rock” means.</p>
-        </div>
-      </article>
-
-      <article class="tile" style="--img:url('assets/salvage.jpg')">
-        <div class="tileInner">
-          <span class="tileTag">Salvage</span>
-          <h3>Salvage</h3>
-          <p>Recover value from wrecks (and sometimes your own mistakes).</p>
-        </div>
-      </article>
-
-      <article class="tile" style="--img:url('assets/rescue.jpg')">
-        <div class="tileInner">
-          <span class="tileTag">Rescue</span>
-          <h3>Rescue & Support</h3>
-          <p>Medical, transport, recovery—get people home alive.</p>
-        </div>
-      </article>
-
-      <article class="tile" style="--img:url('assets/piracy.jpg')">
-        <div class="tileInner">
-          <span class="tileTag">Risk</span>
-          <h3>PvP & High Stakes</h3>
-          <p>Drama, danger, and decisions that matter. Know your exits.</p>
-        </div>
-      </article>
-
-      <article class="tile" style="--img:url('assets/explore.jpg')">
-        <div class="tileInner">
-          <span class="tileTag">Explore</span>
-          <h3>Exploration</h3>
-          <p>Chase horizons, landmarks, derelicts, and strange little stories.</p>
-        </div>
-      </article>
-    </section>
-
-    <section class="finalCTA">
-      <h2>Ready to enlist?</h2>
-      <p>Use the referral link and step into the ’verse.</p>
-      <a class="btn btnPrimary"
+    <!-- TOP-RIGHT JOIN LINK -->
+    <div class="links">
+      <a class="pill"
          href="https://www.robertsspaceindustries.com/enlist?referral=STAR-7SVF-G75G"
-         target="_blank" rel="noopener">
-        Start with my referral →
+         target="_blank"
+         rel="noopener">
+        Join
       </a>
-    </section>
-
-    <footer>
-      Star Citizen and Roberts Space Industries are trademarks of their respective owners.
-    </footer>
+    </div>
   </div>
 
-  <script>
-    // Copy referral code
-    const copyBtn = document.getElementById('copyBtn');
-    const refCode = document.getElementById('refCode').textContent.trim();
-    copyBtn.addEventListener('click', async () => {
-      try{
-        await navigator.clipboard.writeText(refCode);
-        const old = copyBtn.textContent;
-        copyBtn.textContent = "Copied!";
-        setTimeout(() => copyBtn.textContent = old, 1200);
-      }catch(e){
-        alert("Copy failed — manually copy: " + refCode);
-      }
-    });
-  </script>
+  <!-- Hero -->
+  <section class="card">
+    <h1>Star Citizen</h1>
+
+    <p class="sub">
+      A living sci-fi universe where you fly ships, run missions, trade, mine, salvage,
+      and explore—solo or with a crew. Every session can turn into a rescue, a dogfight,
+      a heist, or an “oops” that becomes a story.
+    </p>
+
+    <p class="sub">
+      <strong>Current state (Alpha 4.5):</strong> The ‘Dawn of Engineering’ era introduces deeper
+      ship systems, engineering gameplay foundations, and ongoing quality-of-life and
+      systems updates across the LIVE environment.
+    </p>
+
+    <div class="ctaRow">
+      <a class="btn btnPrimary"
+         href="https://www.robertsspaceindustries.com/enlist?referral=STAR-7SVF-G75G"
+         target="_blank"
+         rel="noopener">
+        Enlist with my referral →
+      </a>
+    </div>
+
+    <div class="joinImage">
+      <img src="assets/join.jpg" alt="Join Star Citizen">
+    </div>
+  </section>
+
+  <!-- Gameplay Loops -->
+  <div class="sectionTitle" id="loops">
+    <h2>Gameplay Loops</h2>
+    <span>Pick a path. Fly your way.</span>
+  </div>
+
+  <section class="tiles">
+    <article class="tile" style="--img:url('assets/cargo.jpg')">
+      <div class="tileInner">
+        <span class="tileTag">Cargo</span>
+        <h3>Hauling & Trading</h3>
+        <p>Move goods, manage risk, build capital.</p>
+      </div>
+    </article>
+
+    <article class="tile" style="--img:url('assets/mining.jpg')">
+      <div class="tileInner">
+        <span class="tileTag">Mining</span>
+        <h3>Mining</h3>
+        <p>Scan, extract, refine, repeat.</p>
+      </div>
+    </article>
+
+    <article class="tile" style="--img:url('assets/salvage.jpg')">
+      <div class="tileInner">
+        <span class="tileTag">Salvage</span>
+        <h3>Salvage</h3>
+        <p>Strip wrecks and reclaim value.</p>
+      </div>
+    </article>
+
+    <article class="tile" style="--img:url('assets/rescue.jpg')">
+      <div class="tileInner">
+        <span class="tileTag">Rescue</span>
+        <h3>Rescue & Support</h3>
+        <p>Medical, transport, recovery.</p>
+      </div>
+    </article>
+
+    <article class="tile" style="--img:url('assets/piracy.jpg')">
+      <div class="tileInner">
+        <span class="tileTag">Risk</span>
+        <h3>PvP & High Stakes</h3>
+        <p>Danger, law, consequences.</p>
+      </div>
+    </article>
+
+    <article class="tile" style="--img:url('assets/explore.jpg')">
+      <div class="tileInner">
+        <span class="tileTag">Explore</span>
+        <h3>Exploration</h3>
+        <p>Discover places and stories.</p>
+      </div>
+    </article>
+  </section>
+
+  <footer>
+    Star Citizen and Roberts Space Industries are trademarks of their respective owners.
+  </footer>
+
+</div>
 </body>
 </html>
