@@ -3,272 +3,480 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Start Star Citizen + 50,000 UEC Bonus</title>
-  <meta name="description" content="Join Star Citizen using my referral link and get a 50,000 UEC bonus after buying a game package. Quick steps, zero fluff." />
-  <meta name="theme-color" content="#0b1020" />
+  <title>Join Star Citizen • 50,000 UEC Bonus</title>
+  <meta name="description" content="Start Star Citizen with a 50,000 UEC bonus by using my referral link. Simple steps, gameplay loops, and a clean quick-start." />
+  <meta name="theme-color" content="#070a14" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Start Star Citizen + 50,000 UEC Bonus" />
-  <meta property="og:description" content="Use my referral link and get a 50,000 UEC bonus after buying a game package. Quick steps, zero fluff." />
+  <meta property="og:title" content="Join Star Citizen • 50,000 UEC Bonus" />
+  <meta property="og:description" content="Use my referral link to get a 50,000 UEC bonus after purchasing a game package. Quick-start + gameplay loops." />
   <meta property="og:type" content="website" />
 
   <style>
     :root{
-      --bg:#0b1020;
-      --card:#0f1833;
-      --text:#eaf0ff;
-      --muted:#b8c3e6;
-      --line:rgba(255,255,255,.12);
+      --bg0:#070a14;
+      --bg1:#0b1230;
+      --bg2:#0a2a2a;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --line: rgba(255,255,255,.12);
+      --text: #eaf0ff;
+      --muted:#b9c4ea;
       --accent:#7aa7ff;
-      --accent2:#8cffd1;
-      --shadow: 0 12px 30px rgba(0,0,0,.35);
-      --radius: 18px;
+      --accent2:#7dffc9;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius: 22px;
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:
-        radial-gradient(900px 500px at 20% 10%, rgba(122,167,255,.18), transparent 55%),
-        radial-gradient(700px 400px at 85% 30%, rgba(140,255,209,.12), transparent 55%),
-        radial-gradient(900px 600px at 50% 90%, rgba(255,255,255,.06), transparent 60%),
-        var(--bg);
       color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       line-height:1.5;
+
+      /* solid background with gradient + subtle stars */
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(122,167,255,.18), transparent 55%),
+        radial-gradient(1000px 600px at 85% 20%, rgba(125,255,201,.12), transparent 55%),
+        radial-gradient(900px 600px at 50% 90%, rgba(255,255,255,.06), transparent 60%),
+        linear-gradient(135deg, var(--bg0), var(--bg1) 55%, var(--bg2));
+      overflow-x:hidden;
     }
+
+    /* tiny star speckle overlay (pure CSS, no images) */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.18;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,.8) 0 1px, transparent 2px),
+        radial-gradient(circle at 60% 10%, rgba(255,255,255,.7) 0 1px, transparent 2px),
+        radial-gradient(circle at 80% 40%, rgba(255,255,255,.6) 0 1px, transparent 2px),
+        radial-gradient(circle at 35% 75%, rgba(255,255,255,.6) 0 1px, transparent 2px),
+        radial-gradient(circle at 10% 85%, rgba(255,255,255,.5) 0 1px, transparent 2px);
+      background-size: 420px 420px, 520px 520px, 620px 620px, 470px 470px, 560px 560px;
+      mix-blend-mode: screen;
+    }
+
     a{color:inherit}
-    .wrap{max-width:1050px;margin:0 auto;padding:22px}
-    header{
+    .wrap{max-width:1120px;margin:0 auto;padding:22px}
+    .nav{
       display:flex;align-items:center;justify-content:space-between;gap:14px;
-      padding:10px 0 18px 0;
+      padding:10px 0 16px 0;
     }
     .brand{
-      display:flex;align-items:center;gap:10px;text-decoration:none;
-      font-weight:700; letter-spacing:.2px;
+      display:flex;align-items:center;gap:10px;
+      text-decoration:none;font-weight:900;letter-spacing:.2px;
     }
-    .dot{
-      width:12px;height:12px;border-radius:50%;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      box-shadow:0 0 0 6px rgba(122,167,255,.12);
+    .mark{
+      width:14px;height:14px;border-radius:50%;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow: 0 0 0 7px rgba(122,167,255,.13);
     }
-    .toplinks{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
     .pill{
-      padding:9px 12px;border:1px solid var(--line);border-radius:999px;
-      text-decoration:none; color:var(--muted); font-weight:600; font-size:14px;
-      background:rgba(255,255,255,.03);
+      padding:9px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:700;font-size:14px;
+      background: rgba(255,255,255,.03);
     }
-    .pill:hover{border-color:rgba(255,255,255,.22);color:var(--text)}
+    .pill:hover{color:var(--text);border-color:rgba(255,255,255,.24)}
+
     .hero{
-      display:grid;grid-template-columns:1.25fr .75fr;gap:18px;
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:16px;
       align-items:stretch;
     }
-    @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
+    @media (max-width: 960px){
+      .hero{grid-template-columns:1fr}
+    }
+
     .card{
-      background:rgba(15,24,51,.78);
       border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
       padding:18px;
-      backdrop-filter: blur(10px);
+      overflow:hidden;
     }
-    h1{margin:0 0 8px 0;font-size:42px;line-height:1.1}
-    @media (max-width: 520px){ h1{font-size:34px} }
-    .sub{color:var(--muted);font-size:16px;margin:0 0 14px 0}
-    .bonus{
-      display:flex;gap:10px;flex-wrap:wrap;align-items:center;
-      margin:14px 0 18px 0;
+
+    .heroMain{
+      padding:0;
     }
+    .heroMedia{
+      position:relative;
+      border-bottom:1px solid var(--line);
+      height:320px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.65)),
+        url("assets/hero.jpg") center/cover no-repeat;
+    }
+    @media (max-width:520px){
+      .heroMedia{height:260px}
+    }
+
+    .heroMedia::after{
+      content:"";
+      position:absolute;inset:-40px;
+      background:
+        radial-gradient(500px 260px at 25% 20%, rgba(122,167,255,.22), transparent 60%),
+        radial-gradient(520px 260px at 85% 40%, rgba(125,255,201,.16), transparent 60%);
+      mix-blend-mode: screen;
+      opacity:.9;
+    }
+
+    .heroBody{padding:18px}
+    h1{margin:0 0 10px 0;font-size:44px;line-height:1.08}
+    @media (max-width:520px){ h1{font-size:34px} }
+
+    .sub{margin:0 0 14px 0;color:var(--muted);font-size:16px}
+
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 16px 0}
     .badge{
       display:inline-flex;align-items:center;gap:8px;
       padding:8px 10px;border-radius:999px;
-      background:rgba(122,167,255,.12);
-      border:1px solid rgba(122,167,255,.26);
-      font-weight:700;font-size:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.04);
+      font-weight:900;font-size:13px;
     }
-    .badge2{
-      background:rgba(140,255,209,.10);
-      border:1px solid rgba(140,255,209,.22);
+    .badge strong{color:var(--text)}
+    .badge.glow{
+      border-color: rgba(122,167,255,.28);
+      background: rgba(122,167,255,.12);
     }
-    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
     .btn{
-      border:0;border-radius:12px;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border-radius:14px;
       padding:12px 14px;
-      font-weight:800;
-      cursor:pointer;
       text-decoration:none;
-      display:inline-flex;align-items:center;gap:10px;
+      font-weight:950;
+      border:1px solid transparent;
+      cursor:pointer;
+      user-select:none;
     }
     .btnPrimary{
       color:#061027;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      box-shadow:0 10px 25px rgba(122,167,255,.25);
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow: 0 14px 30px rgba(122,167,255,.22);
     }
     .btnPrimary:hover{filter:brightness(1.05)}
     .btnGhost{
       color:var(--text);
-      background:rgba(255,255,255,.05);
-      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-color: var(--line);
     }
-    .btnGhost:hover{border-color:rgba(255,255,255,.22)}
-    .steps{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;
-    }
-    @media (max-width: 900px){ .steps{grid-template-columns:1fr} }
-    .step{
-      padding:14px;border-radius:14px;border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-    }
-    .step h3{margin:0 0 6px 0;font-size:16px}
-    .step p{margin:0;color:var(--muted);font-size:14px}
-    .codeBox{
-      margin-top:12px;
-      padding:12px;border-radius:14px;
-      border:1px dashed rgba(255,255,255,.25);
-      background:rgba(0,0,0,.18);
-      color:var(--text);
-      font-weight:800;
-      display:flex;justify-content:space-between;gap:10px;align-items:center;
+    .btnGhost:hover{border-color:rgba(255,255,255,.26)}
+
+    .refBox{
+      margin-top:14px;
+      padding:12px;
+      border-radius:16px;
+      border:1px dashed rgba(255,255,255,.26);
+      background: rgba(0,0,0,.18);
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
       word-break:break-word;
     }
+    .refBox code{font-weight:950;color:var(--text)}
     .copyBtn{
-      flex:0 0 auto;
-      background:rgba(255,255,255,.06);
       border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
       color:var(--text);
       border-radius:12px;
       padding:9px 10px;
-      font-weight:800;
+      font-weight:950;
       cursor:pointer;
+      flex:0 0 auto;
     }
-    .copyBtn:hover{border-color:rgba(255,255,255,.22)}
+    .copyBtn:hover{border-color:rgba(255,255,255,.26)}
+
+    .sideCard h2{margin:0 0 8px 0;font-size:18px}
+    .sideCard p{margin:0;color:var(--muted);font-size:14px}
+    .sideCard .divider{height:1px;background:var(--line);margin:14px 0}
+
+    .sectionTitle{
+      margin:22px 0 10px 0;
+      display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+    }
+    .sectionTitle h2{margin:0;font-size:22px}
+    .sectionTitle span{color:var(--muted);font-size:13px}
+
+    /* Nexus-inspired loop tiles (unique implementation) */
+    .tiles{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 960px){ .tiles{grid-template-columns: 1fr} }
+
+    .tile{
+      position:relative;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background: var(--card2);
+      overflow:hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,.45);
+      min-height: 210px;
+      display:flex;
+      align-items:flex-end;
+    }
+    .tile::before{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.75)),
+        var(--img) center/cover no-repeat;
+      transform: scale(1.02);
+      transition: transform .35s ease;
+      will-change: transform;
+    }
+    .tile::after{
+      content:"";
+      position:absolute;inset:-60px;
+      background:
+        radial-gradient(520px 260px at 15% 20%, rgba(122,167,255,.18), transparent 60%),
+        radial-gradient(520px 260px at 85% 60%, rgba(125,255,201,.12), transparent 60%);
+      opacity:.9;
+      mix-blend-mode: screen;
+      pointer-events:none;
+    }
+    .tile:hover::before{transform: scale(1.08)}
+    .tileInner{
+      position:relative;
+      padding:14px;
+      width:100%;
+    }
+    .tileTag{
+      display:inline-flex;
+      padding:6px 9px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.25);
+      font-weight:950;
+      font-size:12px;
+      letter-spacing:.2px;
+    }
+    .tile h3{margin:10px 0 6px 0;font-size:18px}
+    .tile p{margin:0;color:var(--muted);font-size:14px}
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 960px){ .grid2{grid-template-columns:1fr} }
+
+    .steps ol{margin:10px 0 0 18px;color:var(--muted)}
     .fine{color:var(--muted);font-size:12px;margin-top:10px}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
-    @media (max-width: 900px){ .grid2{grid-template-columns:1fr} }
-    h2{margin:0 0 8px 0;font-size:22px}
-    ul{margin:8px 0 0 18px;color:var(--muted)}
-    footer{margin:18px 0 6px 0;color:var(--muted);font-size:12px;text-align:center}
-    .divider{height:1px;background:var(--line);margin:14px 0}
+
+    .finalCTA{
+      margin-top:18px;
+      padding:18px;
+      border-radius: 26px;
+      border:1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(800px 240px at 20% 20%, rgba(122,167,255,.22), transparent 62%),
+        radial-gradient(800px 240px at 80% 60%, rgba(125,255,201,.14), transparent 62%),
+        rgba(255,255,255,.05);
+      box-shadow: var(--shadow);
+      text-align:center;
+    }
+    .finalCTA h2{margin:0 0 6px 0;font-size:26px}
+    .finalCTA p{margin:0 0 12px 0;color:var(--muted)}
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:12px;
+      margin:18px 0 6px 0;
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <header>
+    <div class="nav">
       <a class="brand" href="#top">
-        <span class="dot" aria-hidden="true"></span>
+        <span class="mark" aria-hidden="true"></span>
         <span>Star Citizen Quick Start</span>
       </a>
-      <nav class="toplinks">
-        <a class="pill" href="#how">How it works</a>
-        <a class="pill" href="#steps">Steps</a>
-        <a class="pill" href="YOUR_GITHUB_URL_HERE" target="_blank" rel="noopener">My GitHub</a>
-      </nav>
-    </header>
+      <div class="links">
+        <a class="pill" href="#loops">Gameplay Loops</a>
+        <a class="pill" href="#steps">How to Start</a>
+        <a class="pill" href="#faq">FAQ</a>
+      </div>
+    </div>
 
     <section id="top" class="hero">
-      <div class="card">
-        <h1>Start Star Citizen with a <span style="white-space:nowrap;">50,000 UEC</span> boost</h1>
-        <p class="sub">
-          Use my referral link when you create your account. Once you buy a game package, you’ll receive the bonus in-game currency
-          to kick-start your journey. <!-- factual basis: referral code bonus after buying package -->
-        </p>
+      <div class="card heroMain">
+        <div class="heroMedia" role="img" aria-label="Star Citizen hero image"></div>
+        <div class="heroBody">
+          <h1>Enter the ’verse with a 50,000 UEC boost</h1>
+          <p class="sub">
+            Create your RSI account using my referral link. After you purchase a game package, you’ll receive
+            the 50,000 UEC bonus to jump-start your journey.
+          </p>
 
-        <div class="bonus">
-          <span class="badge">✅ 50,000 UEC bonus</span>
-          <span class="badge badge2">✅ Supports my referral</span>
-          <span class="badge">✅ Takes ~2 minutes</span>
-        </div>
-
-        <div class="ctaRow">
-          <a class="btn btnPrimary" id="ctaReferral"
-             href="https://www.robertsspaceindustries.com/enlist?referral=STAR-7SVF-G75G"
-             target="_blank" rel="noopener">
-            Enlist with my referral →
-          </a>
-          <a class="btn btnGhost" href="#steps">Show me the steps</a>
-        </div>
-
-        <div class="codeBox" aria-label="Referral code">
-          <span>Referral code: <span id="refCode">STAR-7SVF-G75G</span></span>
-          <button class="copyBtn" id="copyBtn" type="button">Copy</button>
-        </div>
-
-        <p class="fine">
-          Note: The bonus applies after purchasing a game package. Not affiliated with or endorsed by Cloud Imperium Games / RSI.
-        </p>
-
-        <div class="steps" id="steps" style="margin-top:18px">
-          <div class="step">
-            <h3>1) Create your RSI account</h3>
-            <p>Use the referral link (or enter the code during enlist).</p>
+          <div class="badges">
+            <span class="badge glow">✅ <strong>50,000 UEC</strong> bonus</span>
+            <span class="badge">✅ Beginner-friendly steps</span>
+            <span class="badge">✅ One-click enlist</span>
           </div>
-          <div class="step">
-            <h3>2) Buy a game package</h3>
-            <p>You need a game package to play Star Citizen.</p>
+
+          <div class="ctaRow">
+            <a class="btn btnPrimary" href="https://www.robertsspaceindustries.com/enlist?referral=STAR-7SVF-G75G" target="_blank" rel="noopener">
+              Enlist with my referral →
+            </a>
+            <a class="btn btnGhost" href="#steps">Show me how</a>
           </div>
-          <div class="step">
-            <h3>3) Install the RSI Launcher</h3>
-            <p>Download the launcher and install the game. Then jump into the ‘verse.</p>
+
+          <div class="refBox" aria-label="Referral code box">
+            <div>
+              Referral code: <code id="refCode">STAR-7SVF-G75G</code>
+              <div class="fine">Tip: the link auto-applies it, but copying is handy.</div>
+            </div>
+            <button class="copyBtn" id="copyBtn" type="button">Copy</button>
+          </div>
+
+          <div class="fine">
+            Not affiliated with or endorsed by Cloud Imperium Games / RSI.
           </div>
         </div>
       </div>
 
-      <aside class="card" id="how">
-        <h2>What you’re getting</h2>
-        <ul>
-          <li><strong>50,000 UEC</strong> bonus after buying a game package (new accounts using a referral code).</li>
-          <li>A straightforward setup path: account → package → launcher.</li>
-          <li>A clean “single link” you can bookmark/share.</li>
-        </ul>
-
-        <div class="divider"></div>
-
-        <h2>Why this page exists</h2>
-        <p class="sub" style="margin:0">
-          RSI pages are packed (in a good way). This landing page compresses the “what do I click first?” chaos into one route.
+      <aside class="card sideCard">
+        <h2>What is Star Citizen?</h2>
+        <p>
+          A living sci-fi sandbox: fly ships, run missions, trade, mine, salvage, explore, and get into trouble
+          (sometimes intentionally).
         </p>
 
         <div class="divider"></div>
 
-        <h2>My GitHub</h2>
-        <p class="sub" style="margin:0 0 10px 0">
-          I build stuff here — scripts, tools, and side projects. If you’re curious, peek behind the curtain.
+        <h2>Why use a referral?</h2>
+        <p>
+          New accounts that join with a referral code get a 50,000 UEC boost after purchasing a game package.
         </p>
-        <a class="btn btnGhost" href="YOUR_GITHUB_URL_HERE" target="_blank" rel="noopener">Visit my GitHub →</a>
+
+        <div class="divider"></div>
+
+        <h2>Quick safety note</h2>
+        <p>
+          Only trust links that go to <strong>robertsspaceindustries.com</strong>. This page is just a guide + shortcut.
+        </p>
       </aside>
     </section>
 
+    <div class="sectionTitle" id="loops">
+      <h2>Choose your first “gameplay loop”</h2>
+      <span>Pick a vibe. You can swap later.</span>
+    </div>
+
+    <section class="tiles">
+      <article class="tile" style="--img:url('assets/cargo.jpg')">
+        <div class="tileInner">
+          <span class="tileTag">CARGO</span>
+          <h3>Hauling & Trading</h3>
+          <p>Run routes, manage risk, and turn time into credits.</p>
+        </div>
+      </article>
+
+      <article class="tile" style="--img:url('assets/mining.jpg')">
+        <div class="tileInner">
+          <span class="tileTag">MINING</span>
+          <h3>Mining</h3>
+          <p>Scan, extract, refine, and learn what “just one more rock” means.</p>
+        </div>
+      </article>
+
+      <article class="tile" style="--img:url('assets/salvage.jpg')">
+        <div class="tileInner">
+          <span class="tileTag">SALVAGE</span>
+          <h3>Salvage</h3>
+          <p>Strip, recover, and profit from the aftermath of someone else’s bad day.</p>
+        </div>
+      </article>
+
+      <article class="tile" style="--img:url('assets/rescue.jpg')">
+        <div class="tileInner">
+          <span class="tileTag">RESCUE</span>
+          <h3>Rescue & Support</h3>
+          <p>Be the hero: medical, transport, recovery—get people home alive.</p>
+        </div>
+      </article>
+
+      <article class="tile" style="--img:url('assets/piracy.jpg')">
+        <div class="tileInner">
+          <span class="tileTag">RISK</span>
+          <h3>Piracy & PvP</h3>
+          <p>High risk, high drama. Know the laws, know the exits.</p>
+        </div>
+      </article>
+
+      <article class="tile" style="--img:url('assets/hero.jpg')">
+        <div class="tileInner">
+          <span class="tileTag">EXPLORE</span>
+          <h3>Exploration</h3>
+          <p>Chase horizons, landmarks, derelicts, and stories you trip over.</p>
+        </div>
+      </article>
+    </section>
+
+    <div class="sectionTitle" id="steps">
+      <h2>How to start (fast, no confusion)</h2>
+      <span>Account → Package → Launcher</span>
+    </div>
+
     <section class="grid2">
-      <div class="card">
-        <h2>Fast checklist</h2>
-        <ul>
-          <li>Open the referral link and create your account.</li>
-          <li>Choose a <em>Game Package</em> (required to play).</li>
-          <li>Download/install the RSI Launcher and install Star Citizen.</li>
-          <li>Launch, log in, and enjoy the chaos (the fun kind).</li>
-        </ul>
-        <p class="fine">
-          Source basis: RSI states you need a Game Package to enjoy Star Citizen today and the RSI Launcher is the entry point to released modules.
-        </p>
+      <div class="card steps">
+        <h2>3-step path</h2>
+        <ol>
+          <li>Click the referral link and create your RSI account.</li>
+          <li>Buy a <strong>game package</strong> (required to play).</li>
+          <li>Install the RSI Launcher, install the game, and launch.</li>
+        </ol>
+        <div class="ctaRow" style="margin-top:14px">
+          <a class="btn btnPrimary" href="https://www.robertsspaceindustries.com/enlist?referral=STAR-7SVF-G75G" target="_blank" rel="noopener">
+            Enlist now →
+          </a>
+          <a class="btn btnGhost" href="#faq">Read the FAQ</a>
+        </div>
       </div>
 
-      <div class="card">
-        <h2>Optional: add tracking</h2>
-        <p class="sub">
-          If you want to measure clicks, use a URL shortener you control (or GitHub Pages + simple analytics).
-          Keep it respectful; nobody likes creepy telemetry in their space game onboarding.
-        </p>
-        <ul>
-          <li>Use a short link to the referral URL</li>
-          <li>Track page views (privacy-friendly)</li>
-          <li>A/B test headline text</li>
-        </ul>
+      <div class="card" id="faq">
+        <h2>FAQ (tiny but useful)</h2>
+        <p class="sub"><strong>Do I have to use the code manually?</strong><br/>
+          The link auto-applies it. Copy/paste is optional.</p>
+
+        <p class="sub"><strong>When do I get the 50,000 UEC?</strong><br/>
+          After you purchase a game package on the account that used the referral.</p>
+
+        <p class="sub"><strong>Is this official?</strong><br/>
+          The referral program is official; this page is a fan-made shortcut + guide.</p>
+
+        <p class="fine">Pro-tip: Keep this page simple. The button is the mission.</p>
       </div>
     </section>
 
+    <section class="finalCTA">
+      <h2>Ready to begin your Star Citizen adventure?</h2>
+      <p>Use the referral link, claim the 50,000 UEC bonus, and step into the ’verse.</p>
+      <a class="btn btnPrimary" href="https://www.robertsspaceindustries.com/enlist?referral=STAR-7SVF-G75G" target="_blank" rel="noopener">
+        Start with my referral →
+      </a>
+    </section>
+
     <footer>
-      This is an unofficial fan landing page. Star Citizen and Roberts Space Industries are trademarks of their respective owners.
+      Fan-made landing page. Star Citizen and Roberts Space Industries are trademarks of their respective owners.
     </footer>
   </div>
 
@@ -277,12 +485,13 @@
     const copyBtn = document.getElementById('copyBtn');
     const refCode = document.getElementById('refCode').textContent.trim();
     copyBtn.addEventListener('click', async () => {
-      try {
+      try{
         await navigator.clipboard.writeText(refCode);
-        copyBtn.textContent = 'Copied!';
-        setTimeout(() => (copyBtn.textContent = 'Copy'), 1200);
-      } catch (e) {
-        alert('Copy failed — you can manually copy: ' + refCode);
+        const old = copyBtn.textContent;
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => copyBtn.textContent = old, 1200);
+      }catch(e){
+        alert("Copy failed — manually copy: " + refCode);
       }
     });
   </script>
