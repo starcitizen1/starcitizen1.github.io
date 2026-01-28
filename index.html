@@ -14,7 +14,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'AW-17843548859');
   </script>
 
@@ -56,7 +55,6 @@
       min-height: 100%;
     }
 
-    /* STATIC BACKGROUND */
     body::before{
       content:"";
       position:fixed;
@@ -69,7 +67,6 @@
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1120px;margin:0 auto;padding:22px}
 
-    /* Header */
     .nav{
       display:flex;
       align-items:center;
@@ -109,7 +106,6 @@
     }
     .pill:hover{color:var(--text);border-color:rgba(255,255,255,.25)}
 
-    /* Cards */
     .card{
       border:1px solid var(--line);
       background:var(--card);
@@ -119,7 +115,6 @@
       padding:18px;
     }
 
-    /* Typography */
     h1,h2,h3{
       font-family:"Orbitron",system-ui,sans-serif;
       letter-spacing:.05em;
@@ -145,7 +140,6 @@
       margin:0 0 14px;
     }
 
-    /* --- HERO LAYOUT (aligned with lead line) --- */
     .heroLead{font-size:16px}
 
     .heroGrid{
@@ -156,22 +150,16 @@
       align-items:start;
     }
 
-    .heroCopy{min-width:0;}
-    .heroCopy .sub{margin:0 0 12px;}
-    .heroCopy .sub:last-child{margin:0;}
-
     .heroStats{
-      width:100%;
       display:grid;
       gap:10px;
-      align-self:start;
     }
 
     .stat{
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
       border-radius:16px;
-      padding:12px 12px;
+      padding:12px;
     }
 
     .statLabel{
@@ -185,14 +173,12 @@
     .statValue{
       margin-top:4px;
       font-size:13px;
-      color:var(--text);
     }
 
     @media (max-width:960px){
       .heroGrid{grid-template-columns:1fr}
     }
 
-    /* Buttons */
     .btn{
       display:inline-flex;
       align-items:center;
@@ -205,7 +191,6 @@
       font-weight:900;
       cursor:pointer;
       border:1px solid transparent;
-      white-space:nowrap;
     }
 
     .btnPrimary{
@@ -214,112 +199,33 @@
       box-shadow:0 14px 30px rgba(122,167,255,.22);
     }
 
-    .btnPrimary:hover{filter:brightness(1.05)}
-
-    /* --- CTA BAR (clean grid layout) --- */
     .ctaBar{
       margin-top:14px;
       display:grid;
       grid-template-columns: 340px 1fr;
       gap:14px;
-      align-items:center;
       padding:14px;
       border-radius:18px;
-      position:relative;
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.14);
-      box-shadow: 0 18px 45px rgba(0,0,0,.35);
-    }
-
-    .ctaBar::before{
-      content:"";
-      position:absolute;
-      inset:-1px;
-      border-radius:18px;
-      background:linear-gradient(135deg, rgba(122,167,255,.55), rgba(125,255,201,.35));
-      filter: blur(12px);
-      opacity:.32;
-      z-index:-1;
-    }
-
-    .btnBig{
-      width:100%;
-      padding:14px 18px;
-      border-radius:16px;
-      box-shadow: 0 16px 34px rgba(122,167,255,.25);
-    }
-
-    .ctaMeta{
-      display:grid;
-      grid-template-rows:auto auto auto;
-      gap:6px;
-      min-width:0;
-    }
-
-    .ctaMetaTitle{
-      font-family:"Orbitron",system-ui,sans-serif;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:12px;
-      color:var(--text);
-    }
-
-    .ctaMetaText{
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.35;
-    }
-
-    .ctaChips{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin-top:2px;
-    }
-
-    .chip{
-      font-size:12px;
-      color:var(--muted);
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(0,0,0,.18);
-      padding:6px 10px;
-      border-radius:999px;
     }
 
     @media (max-width:860px){
-      .ctaBar{
-        grid-template-columns: 1fr;
-      }
+      .ctaBar{grid-template-columns:1fr}
     }
 
-    /* Referral image */
     .joinImage{
       margin-top:18px;
       border-radius:20px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.14);
-      box-shadow:0 18px 50px rgba(0,0,0,.6);
     }
     .joinImage img{width:100%;display:block}
 
-    /* Section Title */
     .sectionTitle{
       margin:28px 0 10px;
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
     }
 
-    .sectionTitle span{
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    .sectionTitle + .sub{
-      margin-top:6px;
-    }
-
-    /* Tiles */
     .tiles{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -335,39 +241,21 @@
       overflow:hidden;
       border:1px solid var(--line);
       background:var(--card2);
-      box-shadow:0 12px 35px rgba(0,0,0,.45);
       display:flex;
       align-items:flex-end;
     }
+
     .tile::before{
       content:"";
-      position:absolute;inset:0;
+      position:absolute;
+      inset:0;
       background:
         linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.78)),
         var(--img) center/cover no-repeat;
-      transition:transform .35s ease;
     }
-    .tile:hover::before{transform:scale(1.08)}
+
     .tileInner{position:relative;padding:14px}
-    .tile p{color:var(--muted);font-size:14px;margin:0}
 
-    /* Bottom CTA bubble */
-    .bottomCTA{
-      margin:30px auto 10px;
-      text-align:center;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:14px;
-    }
-
-    .ctaSub{
-      margin:0;
-      font-size:14px;
-      color:var(--muted);
-    }
-
-    /* Footer */
     footer{
       margin:22px 0 6px;
       text-align:center;
@@ -380,7 +268,6 @@
 <body>
   <div class="wrap">
 
-    <!-- Header -->
     <div class="nav">
       <div class="brand">
         <span class="mark"></span>
@@ -388,36 +275,39 @@
       </div>
 
       <div class="links">
-        <a class="pill"
-           href="https://verseguide.com"
-           target="_blank"
-           rel="noopener">
+        <a class="pill" href="https://verseguide.com" target="_blank" rel="noopener">
           Verse Maps
         </a>
       </div>
     </div>
 
-    <!-- Hero -->
     <section class="card">
       <h1>Star Citizen</h1>
 
       <div class="heroGrid">
-        <div class="heroCopy">
+        <div>
           <p class="sub heroLead">
-            Star Citizen is a living sci-fi universe where you fly ships, run missions, trade, mine, salvage,
-            and explore—solo or with a crew. Every session can turn into a rescue, a dogfight, a heist,
-            or an “oops” that becomes a story.
+            Star Citizen is a living sci-fi universe where you fly ships, run missions, trade,
+            mine, salvage, and explore—solo or with a crew. Every session can turn into a rescue,
+            a dogfight, a heist, or an “oops” that becomes a story.
           </p>
 
           <p class="sub">
-            <strong>Current state (Alpha 4.5):</strong> Dawn of Engineering deepens ship systems and sets the foundation
-            for hands-on engineering gameplay—power, components, damage control, and crew coordination.
+            <strong>Current state (Alpha 4.6):</strong> Lifeline for Levski throws the ’verse into
+            a system-wide emergency centered on Levski’s Molina Mold outbreak. Players are pulled
+            into interconnected hauling, courier, escort, recovery, defense, and resource
+            gathering missions across Nyx and Stanton, turning logistics and cooperation into
+            front-line gameplay. Quality-of-life improvements arrive with Kel-To ship supply
+            kiosks in major Stanton cities for fast access to engineering tools and essentials,
+            alongside early cockpit Light Amplification Modules (LAMP) on select ships to improve
+            low-light visibility and navigation.
           </p>
 
           <p class="sub">
-            Your gameplay loop can be peaceful or chaotic: haul cargo for profit, mine for resources, salvage wrecks,
-            run support rescues, or chase high-risk PvP. The best part is how these loops collide—your “simple delivery”
-            can become someone else’s bounty, rescue, or ambush.
+            Your gameplay loop can be peaceful or chaotic: haul cargo for profit, mine for
+            resources, salvage wrecks, run support rescues, or chase high-risk PvP. The strength
+            of the current alpha is how these systems collide—your “simple delivery” might be
+            the difference between a station’s survival or collapse.
           </p>
         </div>
 
@@ -437,118 +327,18 @@
         </aside>
       </div>
 
-      <!-- CTA bar -->
       <div class="ctaBar">
-        <a class="btn btnPrimary btnBig"
+        <a class="btn btnPrimary"
            href="https://www.robertsspaceindustries.com/enlist?referral=STAR-7SVF-G75G"
            target="_blank"
-           rel="noopener"
-           onclick="gtag('event', 'click', {'event_category':'Referral','event_label':'Star Citizen Enlist (Top CTA)','value':1});">
+           rel="noopener">
           Enlist with my referral →
         </a>
-
-        <div class="ctaMeta">
-          <div class="ctaMetaTitle">New player bonus</div>
-          <div class="ctaMetaText">Referral code grants new accounts bonus UEC.</div>
-
-          <div class="ctaChips">
-            <span class="chip">Bonus UEC</span>
-            <span class="chip">New account reward</span>
-            <span class="chip">Fast start</span>
-          </div>
-        </div>
       </div>
 
       <div class="joinImage">
         <img src="assets/join.jpg" alt="Join Star Citizen">
       </div>
-    </section>
-
-    <!-- Game Loops -->
-    <div class="sectionTitle">
-      <h2>Game Loops in Star Citizen</h2>
-    </div>
-
-    <p class="sub">
-      Star Citizen is built around interconnected gameplay loops that let players choose
-      how they live in the ’verse. Whether you prefer calculated risk or chaotic encounters,
-      each loop supports long-term progression, reputation, and emergent storytelling.
-      No two sessions ever play out the same.
-      <br><br>
-
-      Cargo hauling and trading focus on moving goods across star systems, balancing profit
-      against piracy, market shifts, and travel risk. Mining loops revolve around scanning,
-      extracting, and refining valuable resources, while salvaging allows players to reclaim
-      materials from wrecked ships and abandoned hulls.
-      <br><br>
-
-      Combat-oriented loops introduce high-stakes PvP and bounty-driven encounters, where
-      law, reputation, and consequences matter. Exploration invites players to discover
-      locations, anomalies, and stories hidden across planets and space. Medical and rescue
-      gameplay ties everything together, responding to distress calls and turning failures
-      into recovery missions instead of hard stops.
-    </p>
-
-    <!-- Gameplay tiles (small bubble tags removed) -->
-    <section class="tiles">
-      <article class="tile" style="--img:url('assets/cargo.jpg')">
-        <div class="tileInner">
-          <h3>Hauling & Trading</h3>
-          <p>Move goods, manage risk, build capital.</p>
-        </div>
-      </article>
-
-      <article class="tile" style="--img:url('assets/mining.jpg')">
-        <div class="tileInner">
-          <h3>Mining</h3>
-          <p>Scan, extract, refine, repeat.</p>
-        </div>
-      </article>
-
-      <article class="tile" style="--img:url('assets/salvage.jpg')">
-        <div class="tileInner">
-          <h3>Salvage</h3>
-          <p>Strip wrecks and reclaim value.</p>
-        </div>
-      </article>
-
-      <article class="tile" style="--img:url('assets/rescue.jpg')">
-        <div class="tileInner">
-          <h3>Rescue & Support</h3>
-          <p>Medical, transport, recovery.</p>
-        </div>
-      </article>
-
-      <article class="tile" style="--img:url('assets/piracy.jpg')">
-        <div class="tileInner">
-          <h3>PvP & High Stakes</h3>
-          <p>Danger, law, consequences.</p>
-        </div>
-      </article>
-
-      <article class="tile" style="--img:url('assets/explore.jpg')">
-        <div class="tileInner">
-          <h3>Exploration</h3>
-          <p>Discover places and stories.</p>
-        </div>
-      </article>
-    </section>
-
-    <!-- Bottom CTA -->
-    <section class="card bottomCTA">
-      <h2>Ready to join the ’verse?</h2>
-
-      <a class="btn btnPrimary"
-         href="https://www.robertsspaceindustries.com/enlist?referral=STAR-7SVF-G75G"
-         target="_blank"
-         rel="noopener"
-         onclick="gtag('event', 'click', {'event_category':'Referral','event_label':'Star Citizen Enlist (Bottom CTA)','value':1});">
-        Enlist Today
-      </a>
-
-      <p class="ctaSub">
-        Get a bonus reward for enlisting today!
-      </p>
     </section>
 
     <footer>
